@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+.header {
+  @apply bg-white shadow;
+}
+
+.nav {
+  @apply container mx-auto flex justify-between items-center py-4;
+}
+
+.logo {
+  @apply text-xl font-bold;
+}
+
+.nav-links {
+  @apply flex space-x-6 text-gray-700;
+}
+
+.nav-links a {
+  @apply hover:text-blue-500;
+}
+
+.hero {
+  @apply bg-gray-100 py-16;
+}
+
+.hero-content {
+  @apply container mx-auto text-center;
+}
+
+.hero-title {
+  @apply text-4xl font-bold mb-4;
+}
+
+.hero-subtitle {
+  @apply text-lg text-gray-600;
+}
+
+.services {
+  @apply container mx-auto py-16 grid grid-cols-1 md:grid-cols-3 gap-8;
+}
+
+.service {
+  @apply bg-white p-6 rounded-lg shadow-lg text-center;
+}
+
+.service-title {
+  @apply text-2xl font-semibold mb-2;
+}
+
+.service-description {
+  @apply text-gray-600;
+}
+
+.products {
+  @apply bg-white py-16;
+}
+
+.products-title {
+  @apply text-3xl font-bold mb-8 text-center;
+}
+
+.product-list {
+  @apply container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
+.product {
+  @apply bg-gray-50 p-6 rounded-lg shadow;
+}
+
+.product-name {
+  @apply text-2xl font-semibold mb-2;
+}
+
+.product-description {
+  @apply text-gray-600;
+}
+
+.stats {
+  @apply bg-gray-100 py-16 text-center;
+}
+
+.stats-title {
+  @apply text-3xl font-bold mb-6;
+}
+
+.stats-list {
+  @apply flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-8;
+}
+
+.stat-number {
+  @apply text-4xl font-bold;
+}
+
+.stat-label {
+  @apply text-gray-600;
+}
+
+.footer {
+  @apply bg-white py-12 grid grid-cols-1 md:grid-cols-3 gap-8 container mx-auto;
+}
+
+.footer-section h4 {
+  @apply font-semibold mb-4;
+}
+
+.footer-section p {
+  @apply text-gray-600;
+}

@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+.header {
+  @apply bg-white shadow;
+}
+
+.nav {
+  @apply container mx-auto flex justify-between items-center py-4;
+}
+
+.logo {
+  @apply text-xl font-bold;
+}
+
+.nav-links {
+  @apply flex space-x-6 text-gray-700;
+}
+
+.nav-links a {
+  @apply hover:text-blue-500;
+}
