@@ -1,3 +1,4 @@
+@if (data?.data?.attributes?.dropdownButtons?.length) {
 <nav>
   @for (btn of data.data.attributes.dropdownButtons; track btn.id) {
   <button>
@@ -5,3 +6,4 @@
   </button>
   }
 </nav>
+}

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { HeaderService } from '../../services/header-service';
 
 @Component({
@@ -10,6 +10,7 @@ import { HeaderService } from '../../services/header-service';
 export class Header {
   data: any;
   headerService = inject(HeaderService);
+  cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
     this.headerService.getHeader().subscribe({
@@ -17,6 +18,7 @@ export class Header {
         console.log('Data received: ', res);
 
         this.data = res;
+        this.cdr.detectChanges();
       },
       error: (err) => {
         console.log('Failed to fetch header: ', err);
