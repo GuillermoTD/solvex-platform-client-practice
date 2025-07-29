@@ -1,6 +1,6 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
 import { ApiDirective } from '../../directives/api-directive';
 import { HeaderService } from '../../services/header-service';
+import { ChangeDetectorRef, Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
