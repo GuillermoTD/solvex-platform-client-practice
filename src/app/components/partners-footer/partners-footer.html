@@ -1,1 +1,9 @@
-<p>partners-footer works!</p>
+<div class="flex justify-center bg-[var(--color-partners-footer-bg)]">
+  <nav class="flex items-center">
+    @if (data?.data?.partnersFooter?.partnerBadges?.length) {
+    @for (badge of data.data.partnersFooter.partnerBadges; track badge.id) {
+    <img class="w-[184px] m-[20px]" [src]="'http://localhost:1337' + badge.url" />
+    }
+    }
+  </nav>
+</div>

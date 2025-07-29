@@ -1,31 +1,33 @@
-<nav class="flex items-center gap-[10px] ">
-  @if (data?.data?.section[0]?.logoIcon?.image?.url) {
-    <img [src]="'http://localhost:1337' + data.data.section[0].logoIcon.image.url" class="h-[200px]"/>
-  }
+<div class="flex justify-center bg-[var(--color-navbar-bg)]">
+  <nav class="flex items-center gap-x-[50px] text-white text-[12px] px-[16px] py-[8px]">
+    @if (data?.data?.navbar?.logoButton?.image?.url) {
+      <img class="w-[140px]" [src]="'http://localhost:1337' + data.data.navbar.logoButton.image.url" />
+    }
 
-  @if (data?.data?.section[0]?.startNavbarButton) {
-    <button>
-      {{ data.data.section[0].startNavbarButton.label }}
-    </button>
-  }
+    @if (data?.data?.navbar?.startNavbarButton) {
+      <button>
+        {{ data.data.navbar.startNavbarButton.label }}
+      </button>
+    }
 
-  @if (data?.data?.section[0]?.dropdownButtons?.length) {
-  @for (btn of data.data.section[0].dropdownButtons; track btn.id) {
-    <button>
-      {{ btn.label }}
-    </button>
-  }
-  }
+    @if (data?.data?.navbar?.dropdownButtons?.length) {
+    @for (btn of data.data.navbar.dropdownButtons; track btn.id) {
+      <button>
+        {{ btn.label }}
+      </button>
+    }
+    }
 
-  @if (data?.data?.section[0]?.navbarButtons?.length) {
-  @for (btn of data.data.section[0].navbarButtons; track btn.id) {
-    <button>
-      {{ btn.label }}
-    </button>
-  }
-  }
+    @if (data?.data?.navbar?.navbarButtons?.length) {
+    @for (btn of data.data.navbar.navbarButtons; track btn.id) {
+      <button>
+        {{ btn.label }}
+      </button>
+    }
+    }
 
-  @if (data?.data?.section[0]?.themeToggle) {
-  {{ data.data.section[0].themeToggle.darkMode }}
-  }
-</nav>
+    @if (data?.data?.navbar?.themeToggle) {
+    {{ data.data.navbar.themeToggle.darkMode }}
+    }
+  </nav>
+</div>

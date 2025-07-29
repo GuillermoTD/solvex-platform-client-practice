@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HeaderService } from './header-service';
+import { IconsHeaderService } from './icons-header-service';
 
 describe('HeaderService', () => {
-  let service: HeaderService;
+  let service: IconsHeaderService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(HeaderService);
+    service = TestBed.inject(IconsHeaderService);
   });
 
   it('should be created', () => {

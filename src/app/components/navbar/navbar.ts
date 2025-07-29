@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavbarService } from '../../services/navbar/navbar-service';
 import { ApiDirective } from '../../directives/api-directive';
 
@@ -9,7 +9,7 @@ import { ApiDirective } from '../../directives/api-directive';
   styleUrl: './navbar.css',
 })
 export class Navbar extends ApiDirective<any> {
-  constructor(service: NavbarService, cdr: ChangeDetectorRef) {
-    super(service, cdr);
+  constructor(service: NavbarService) {
+    super(service);
   }
 }

@@ -1,9 +1,0 @@
-<nav class="flex items-center gap-[10px]">
-  @if (data?.data?.section[1]?.socialsIcons?.image?.url) {
-    @for (icon of data.data.section[1].socialsIcons; track icon.id) {
-    <img [src]="
-            'http://localhost:1337' + data.data.section[1].socialsIcons.image.url
-          " />
-    }
-  }
-</nav>

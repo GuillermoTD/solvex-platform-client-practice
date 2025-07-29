@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@theme {
+  --color-icons-header-bg: oklch(0.2616 0.0431 255.94);
+  --color-navbar-bg: oklch(0.1421 0.0395 249.29);
+  --color-partners-footer-bg: oklch(0.1776 0.0392 257.91);
+}

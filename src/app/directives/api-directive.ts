@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Directive, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Directive, inject, OnInit } from '@angular/core';
 import { ApiService } from '../services/api-service';
 
 @Directive({
@@ -7,10 +7,12 @@ import { ApiService } from '../services/api-service';
 export abstract class ApiDirective<T> implements OnInit {
   protected data?: T;
 
-  constructor(
-    protected service: ApiService,
-    private cdr: ChangeDetectorRef,
-  ) {}
+  protected service: ApiService;
+  private cdr = inject(ChangeDetectorRef);
+
+  constructor(service: ApiService) {
+    this.service = service;
+  }
 
   ngOnInit() {
     this.service.fetch<T>().subscribe({
