@@ -1,0 +1,31 @@
+<nav class="flex items-center gap-[10px] ">
+  @if (data?.data?.Section[0]?.logoIcon?.image?.url) {
+    <img [src]="'http://localhost:1337' + data.data.Section[0].logoIcon.image.url" alt="logoIcon" class="h-[200px]"/>
+  }
+
+  @if (data?.data?.Section[0]?.startNavbarButton) {
+    <button>
+      {{ data.data.Section[0].startNavbarButton.label }}
+    </button>
+  }
+
+  @if (data?.data?.Section[0]?.dropdownButtons?.length) {
+  @for (btn of data.data.Section[0].dropdownButtons; track btn.id) {
+    <button>
+      {{ btn.label }}
+    </button>
+  }
+  }
+
+  @if (data?.data?.Section[0]?.navbarButtons?.length) {
+  @for (btn of data.data.Section[0].navbarButtons; track btn.id) {
+    <button>
+      {{ btn.label }}
+    </button>
+  }
+  }
+
+  @if (data?.data?.Section[0]?.themeToggle) {
+  {{ data.data.Section[0].themeToggle.darkMode }}
+  }
+</nav>
