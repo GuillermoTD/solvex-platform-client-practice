@@ -8,6 +8,6 @@ export class NavbarService extends ApiService {
   constructor() {
     super();
     this.url =
-      '/api/home?populate=Section.logoIcon.image&populate=Section.startNavbarButton&populate=Section.dropdownButtons&populate=Section.navbarButtons&populate=Section.themeToggle';
+      '/api/home?populate=section.logoIcon.image&populate=section.startNavbarButton&populate=section.dropdownButtons&populate=section.navbarButtons&populate=section.themeToggle';
   }
 }
