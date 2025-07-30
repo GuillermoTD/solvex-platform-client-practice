@@ -1,1 +1,77 @@
-<p>footer works!</p>
+<div class="flex flex-row justify-center py-[40px] bg-black gap-x-[60px]">
+  <div class="grid grid-cols-2 gap-y-[30px] gap-x-[60px]">
+    @if (data?.data?.footer?.footerBlocks?.length) {
+      @for (block of data.data.footer.footerBlocks; track block.id) {
+        <div>
+          @if (block.blockButtons.length) {
+            <a [href]="block.titleButton?.href" class="text-white text-md">
+              {{ block.titleButton.label }}
+            </a>
+
+            <ul
+              class="space-y-[10px] text-[var(--color-footer-button-text)] text-sm"
+            >
+              @for (btn of block.blockButtons; track btn.id) {
+                <li>
+                  <a [href]="btn?.href">
+                    <span class="text-white">&rsaquo;</span> {{ btn.label }}
+                  </a>
+                </li>
+              }
+            </ul>
+          }
+        </div>
+      }
+    }
+  </div>
+
+  <div class="flex flex-col gap-y-[20px] px-[50px]">
+    @if (data?.data?.footer?.footerButtons?.length) {
+      @for (btn of data.data.footer.footerButtons; track btn.id) {
+        <a [href]="btn.href" class="text-white text-md">
+          {{ btn.label }}
+        </a>
+      }
+    }
+
+    @if (data?.data?.footer?.socialIconsBar) {
+      <p class="text-white text-md">
+        {{ data.data.footer.socialIconsBar.title }}
+      </p>
+      <nav class="flex items-center gap-[10px]">
+        @if (data?.data?.footer?.socialIconsBar?.socialIconButtons?.length) {
+          @for (
+            icon of data.data.footer.socialIconsBar.socialIconButtons;
+            track icon.id
+          ) {
+            <img
+              class="h-[17px] m-[5px]"
+              [src]="'http://localhost:1337' + icon.image.url"
+            />
+          }
+        }
+      </nav>
+    }
+    </div>
+
+    <div class="flex flex-col text-white border-l-1 border-[var(--color-footer-border)]">
+      @if (data?.data?.footer?.contactBlocks?.length) {
+        @for (block of data.data.footer.contactBlocks; track block.id) {
+          <div class="flex flex-col gap-y-[15px] my-[20px] px-[50px]">
+            <div class="text-md">
+              {{block.title}}
+            </div>
+            <div class="flex items-center text-sm">
+              <span class="material-icons mr-[5px]">phone</span>{{block.phoneNumber}}
+            </div>
+            <div class="flex items-center text-sm">
+              <span class="material-icons mr-[5px]">location_on</span>{{block.address }}
+            </div>
+            <div class="flex items-center text-sm">
+              <span class="material-icons mr-[5px]">email</span>{{block.email }}
+            </div>
+          </div>
+        }
+      }
+    </div>
+</div>

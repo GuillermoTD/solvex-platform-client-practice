@@ -1,4 +1,11 @@
-<app-icons-header />
-<app-navbar />
-<app-partners-footer />
-<app-footer />
+<div class="min-h-screen flex flex-col">
+  <app-icons-header />
+  <app-navbar />
+
+  <main class="flex-1">
+    <router-outlet />
+  </main>
+
+  <app-partners-footer />
+  <app-footer />
+</div>

@@ -1,11 +1,11 @@
 <div class="flex justify-center bg-[var(--color-icons-header-bg)] ">
-<nav class="flex items-center gap-[10px] p-[5px]">
-  @if (data?.data?.iconsHeader?.socialIconButtons?.length) {
-    @for (icon of data.data.iconsHeader.socialIconButtons; track icon.id) {
-    <img class="h-[15px]" [src]="
-            'http://localhost:1337' + icon.image.url
-          " />
+  <nav class="flex items-center gap-[10px]">
+    @if (data?.data?.iconsHeader?.socialIconButtons?.length) {
+      @for (icon of data.data.iconsHeader.socialIconButtons; track icon.id) {
+      <img class="h-[17px] m-[5px]" [src]="
+              'http://localhost:1337' + icon.image.url
+            " />
+      }
     }
-  }
-</nav>
+  </nav>
 </div>
