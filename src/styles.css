@@ -6,4 +6,6 @@
   --color-partners-footer-bg: oklch(0.1776 0.0392 257.91);
   --color-footer-button-text: oklch(0.7647 0.0448 246.28);
   --color-footer-border: oklch(0.4968 0.0957 248.25);
+  --color-enterprise-services: oklch(0.1421 0.0395 249.29);
+  --color-button-secondary: oklch(0.5957 0.2004 28.62);
 }

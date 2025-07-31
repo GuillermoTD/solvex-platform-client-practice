@@ -1,5 +1,5 @@
 <div class="flex justify-center bg-[var(--color-navbar-bg)]">
-  <nav class="flex items-center gap-x-[50px] text-white text-[12px] px-[16px] py-[8px]">
+  <nav class="flex mx-auto gap-x-[50px] text-white text-[12px] px-[16px] py-[8px]">
     @if (data?.data?.navbar?.logoButton?.image?.url) {
       <img class="w-[140px]" [src]="'http://localhost:1337' + data.data.navbar.logoButton.image.url" />
     }
@@ -26,8 +26,10 @@
     }
     }
 
+    <!--
     @if (data?.data?.navbar?.themeToggle) {
     {{ data.data.navbar.themeToggle.darkMode }}
     }
+    -->
   </nav>
 </div>

@@ -1,15 +1,15 @@
-<div class="flex flex-row justify-center py-[40px] bg-black gap-x-[60px]">
-  <div class="grid grid-cols-2 gap-y-[30px] gap-x-[60px]">
+<div class="flex justify-center py-[40px] bg-black gap-x-[60px]">
+  <div class="grid grid-cols-2 gap-x-[60px]">
     @if (data?.data?.footer?.footerBlocks?.length) {
       @for (block of data.data.footer.footerBlocks; track block.id) {
-        <div>
+        <div class="flex flex-col gap-y-[10px]">
           @if (block.blockButtons.length) {
             <a [href]="block.titleButton?.href" class="text-white text-md">
               {{ block.titleButton.label }}
             </a>
 
             <ul
-              class="space-y-[10px] text-[var(--color-footer-button-text)] text-sm"
+              class="flex flex-col gap-y-[10px] text-[var(--color-footer-button-text)] text-sm"
             >
               @for (btn of block.blockButtons; track btn.id) {
                 <li>

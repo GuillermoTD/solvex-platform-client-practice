@@ -1,1 +1,110 @@
-<p>home works!</p>
+<div class="flex flex-col items-center bg-[var(--color-enterprise-services)] text-white">
+  <div class="w-full">
+    @if (data?.data?.banner) {
+      <img
+        [src]="'http://localhost:1337' + data.data.banner.url"
+        alt="Banner Image"
+        class="w-full h-auto object-cover"
+      />
+    }
+  </div>
+
+  <div class="flex flex-col w-3/4 items-center py-[100px] gap-[40px]">
+    @if (data?.data?.enterpriseServices?.title) {
+      <div class="w-full max-w-full text-center">
+        <div class="text-[54px] font-bold mx-auto inline-block">
+          {{ data.data.enterpriseServices.title }}
+        </div>
+
+        @if (data?.data?.enterpriseServices?.description) {
+          <div class="text-md mt-[10px] max-w-full  text-center">
+            {{ data.data.enterpriseServices.description }}
+          </div>
+        }
+      </div>
+
+      <div class="grid grid-cols-4 gap-[60px] w-2/3 justify-items-center max-w-full mx-auto">
+        @if (data?.data?.enterpriseServices?.serviceButtons?.length) {
+          @for (btn of data.data.enterpriseServices.serviceButtons; track btn.id) {
+            <button class="text-lg">
+              {{ btn.label }}
+            </button>
+          }
+        }
+      </div>
+    }
+  </div>
+
+  <div class="flex flex-col w-3/4 items-center py-[100px] gap-[40px]">
+    @if (data?.data?.enterpriseProducts?.title) {
+      <div class="w-full max-w-full text-center">
+        <div class="text-[54px] font-bold mx-auto">
+          {{ data.data.enterpriseProducts.title }}
+        </div>
+
+        @if (data?.data?.enterpriseProducts?.description) {
+          <div class="text-md mt-[10px] text-center">
+            {{ data.data.enterpriseProducts.description }}
+          </div>
+        }
+        </div>
+      }
+    </div>
+
+    <div class="grid grid-cols-2 gap-[60px] w-3/4">
+      @if (data?.data?.enterpriseProducts?.productCards?.length) {
+        @for (card of data.data.enterpriseProducts.productCards; track card.id) {
+          <div class="grid grid-rows-[auto_auto_1fr] gap-[30px]">
+            @if (card.title) {
+              <div class="text-[32px] font-semibold">
+                {{ card.title }}
+              </div>
+            }
+
+            @if (card.description) {
+              <div class="text-md">
+                {{ card.description }}
+              </div>
+            }
+
+            @if (card.button?.label) {
+              <div class="flex items-end">
+                <button class="rounded-full text-[var(--color-button-secondary)] border border-[var(--color-button-secondary)] text-lg p-[10px]">
+                  {{ card.button.label }}
+                </button>
+              </div>
+            }
+          </div>
+        }
+      }
+  </div>
+
+    <div class="flex flex-col py-[100px] gap-[30px] items-center text-center">
+      @if (data?.data?.achievements?.title) {
+        <div class="text-[54px] font-bold">
+          {{ data.data.achievements.title }}
+        </div>
+
+        @if (data?.data?.achievements?.achievementItems?.length) {
+          <div class="flex flex-row gap-[60px]">
+          @for (achievement of data.data.achievements.achievementItems; track achievement.id) {
+            <div class="flex flex-col w-full items-center">
+              @if (achievement.statistic) {
+                <div class="text-xl font-semibold">
+                  {{ achievement.statistic }}
+                </div>
+              }
+
+              @if (achievement.description) {
+                <div class="text-lg">
+                  {{ achievement.description }}
+                </div>
+              }
+            </div>
+          }
+          </div>
+        }
+      }
+  </div>
+</div>
+
